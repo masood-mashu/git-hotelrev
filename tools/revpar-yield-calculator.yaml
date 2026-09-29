@@ -1,14 +1,18 @@
-name: "revpar-yield-calculator"
+name: revpar-yield-calculator
+version: 1.0.0
 description: "Computes RevPAR from Average Daily Rate (ADR) and Occupancy percentage"
-version: "0.1.0"
-runtime:
-  language: "python"
-  entrypoint: "revpar_yield_calculator.py"
-parameters:
-  type: "object"
+input_schema:
+  type: object
   properties:
     pms_metrics_json:
-      type: "string"
+      type: string
       description: "JSON with adr_usd and occupancy_pct"
   required:
-    - "pms_metrics_json"
+    - pms_metrics_json
+implementation:
+  type: script
+  path: revpar_yield_calculator.py
+  runtime: python3
+annotations:
+  read_only: true
+  idempotent: true

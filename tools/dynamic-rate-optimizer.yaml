@@ -1,14 +1,18 @@
-name: "dynamic-rate-optimizer"
+name: dynamic-rate-optimizer
+version: 1.0.0
 description: "Calculates dynamic rate recommendation based on remaining days and target occupancy"
-version: "0.1.0"
-runtime:
-  language: "python"
-  entrypoint: "dynamic_rate_optimizer.py"
-parameters:
-  type: "object"
+input_schema:
+  type: object
   properties:
     demand_json:
-      type: "string"
+      type: string
       description: "JSON with base_rate_usd, days_to_arrival, current_occupancy_pct"
   required:
-    - "demand_json"
+    - demand_json
+implementation:
+  type: script
+  path: dynamic_rate_optimizer.py
+  runtime: python3
+annotations:
+  read_only: true
+  idempotent: true

@@ -1,16 +1,30 @@
 spec_version: "0.1.0"
-name: "git-hotelrev"
-version: "0.1.0"
+name: git-hotelrev
+version: 1.0.0
 description: "Autonomous Hospitality Revenue Management, RevPAR Optimization & Yield Pricing Agent"
-framework: "opengap"
-authors:
-  - name: "masood-mashu"
-    email: "masoodmashu03@gmail.com"
+author: "masood-mashu"
 license: "Apache-2.0"
 
+model:
+  preferred: "openai:gpt-4o"
+  fallback:
+    - "anthropic:claude-3-5-sonnet"
+    - "openai:gpt-4o-mini"
+  constraints:
+    temperature: 0.1
+    max_tokens: 4096
+
+skills:
+  - hospitality-revenue-management
+  - yield-pricing-algorithms
+
+tools:
+  - revpar-yield-calculator
+  - dynamic-rate-optimizer
+  - cancellation-buffer-estimator
+
 runtime:
-  language: "python"
-  version: ">=3.10"
+  max_turns: 50
   timeout: 120
 
 tags:
