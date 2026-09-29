@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "estimate_cancellation_buffer",
+  "description": "Calculates allowable overbooking buffer percentage based on historical no-show rate",
+  "type": "object",
+  "properties": {
+    "cancellation_data_json": {
+      "type": "string",
+      "description": "JSON with historical_no_show_pct"
+    }
+  },
+  "required": [
+    "cancellation_data_json"
+  ]
+}

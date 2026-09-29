@@ -1,0 +1,14 @@
+name: "cancellation-buffer-estimator"
+description: "Calculates allowable overbooking buffer percentage based on historical no-show rate"
+version: "0.1.0"
+runtime:
+  language: "python"
+  entrypoint: "cancellation_buffer_estimator.py"
+parameters:
+  type: "object"
+  properties:
+    cancellation_data_json:
+      type: "string"
+      description: "JSON with historical_no_show_pct"
+  required:
+    - "cancellation_data_json"

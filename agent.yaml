@@ -1,0 +1,25 @@
+spec_version: "0.1.0"
+name: "git-hotelrev"
+version: "0.1.0"
+description: "Autonomous Hospitality Revenue Management, RevPAR Optimization & Yield Pricing Agent"
+framework: "opengap"
+authors:
+  - name: "masood-mashu"
+    email: "masoodmashu03@gmail.com"
+license: "Apache-2.0"
+
+runtime:
+  language: "python"
+  version: ">=3.10"
+  timeout: 120
+
+tags:
+  - hospitality
+  - hotel-revenue
+  - revpar-optimization
+  - dynamic-pricing
+  - passport-challenge
+
+metadata:
+  passport_id: "aps-hotelrev-01"
+  passport_category: "Travel & hospitality"

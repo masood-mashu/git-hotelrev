@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "optimize_room_rate",
+  "description": "Calculates dynamic rate recommendation based on remaining days and target occupancy",
+  "type": "object",
+  "properties": {
+    "demand_json": {
+      "type": "string",
+      "description": "JSON with base_rate_usd, days_to_arrival, current_occupancy_pct"
+    }
+  },
+  "required": [
+    "demand_json"
+  ]
+}
